@@ -1,14 +1,57 @@
 /*animations*/
-@keyframes left {
+@keyframes Left{
     0% {
+        
+        opacity: 0;
         transform: translateX(-100%);
     }
 
     100% {
+        opacity: 1;
         transform: translateX(0);
     }
 }
 
+@keyframes Right{
+    0% {
+    opacity: 0;
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+@keyframes load{
+    0% {
+        
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100%);
+        display: none;
+    }
+}
+
+
+/*cursor*/
+.cursor{
+    display: block;
+    z-index: 9999;
+    background: grey;
+    position: fixed;
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    box-shadow: 5px 17px 49px -12px rgba(0,0,0,0.61);
+
+}
 /*apparition au deffilement */
 .reveal {
     opacity: 0;
@@ -22,8 +65,8 @@
 }
 
 
-/**/
-body {
+/*welcome*/
+body,html {
     background-color: #0A0E18;
     margin: 0;
 }
@@ -34,9 +77,14 @@ body {
     height: 100vh;
     background-color: #F3F0E2;
     display: flex;
+    position: absolute;
     justify-content: center;
     flex-direction: column;
     align-items: right;
+    animation: load;
+    animation-delay: 2s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 p.Bienvenue {
@@ -46,7 +94,7 @@ p.Bienvenue {
     font-family: 'Abril Fatface', cursive;
     font-weight: 900;
     margin-left: 5%;
-    animation: left 1.5s ease-out;
+    animation: Left 1.5s cubic-bezier(0,0,.1,.99);
     z-index: 10;
 
 }
@@ -74,11 +122,15 @@ p.Bienvenue {
     color: #0A0E18;
     position: relative;
     text-align: start;
-    margin-left: 5%;
+    margin-left: 10%;
     width: 50%;
     font-family: 'Abhaya Libre', serif;
     font-weight: 400;
     font-size: calc(2vw + 2vh);
+    animation: Left cubic-bezier(0,0,.1,.99);
+    animation-delay:2s;
+    animation-duration: 2s;
+
 
 }
 
@@ -92,6 +144,9 @@ p.Bienvenue {
     font-family: 'Abhaya Libre', serif;
     font-weight: 800;
     font-size: calc(2vw + 2.5vh);
+    animation: Right cubic-bezier(0,0,.1,.99);
+    animation-delay:2s;
+    animation-duration: 2s;
 }
 
 /*Projet*/
@@ -141,7 +196,7 @@ p.Bienvenue {
     height:100%;
     width: 105vw;
     background-color: #F3F0E2;
-    z-index: -1;
+    z-index: 1;
 }
 
 .TitleT {
@@ -278,7 +333,7 @@ div.thx{
     display: flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
+    height:105vh;
 }
 
 h2.thx{

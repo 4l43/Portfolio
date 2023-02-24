@@ -23,11 +23,24 @@ window.addEventListener("DOMContentLoaded", function () {
     })
 })
 
-/*load screan*/ 
 
-window.addEventListener("load", function() {
-    var loader = document.getElementById("Background");
-    setTimeout(function() {
-      loader.style.display = "none";
-    }, 2000);
-  });
+
+//cursor 
+const cursorRounded = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', e => {
+    const mouseX = e.pageX;
+    const mouseY = e.pageY;
+
+    cursorRounded.style.top = mouseY + "px";
+    cursorRounded.style.left = mouseX + "px";
+})
+
+//scroll
+
+// Supprimer la classe 'no-scroll' après 2 secondes
+document.body.style.overflowY = 'hidden';
+setTimeout(()=> {
+    document.body.style.overflowY = 'auto';
+    console.log("salut");
+}, 2000);
