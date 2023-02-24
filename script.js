@@ -1,3 +1,14 @@
+//toujours en haut
+window.scrollTo(0,0);
+console.log("salut");
+//no-scroll
+
+document.body.style.overflowY = 'hidden';
+setTimeout(()=> {
+    document.body.style.overflowY = 'auto';
+}, 2000);
+
+
 /*apparition au deffilement */
 const threshold = .1
 const options = {
@@ -35,12 +46,3 @@ document.addEventListener('mousemove', e => {
     cursorRounded.style.top = mouseY + "px";
     cursorRounded.style.left = mouseX + "px";
 })
-
-//scroll
-
-// Supprimer la classe 'no-scroll' après 2 secondes
-document.body.style.overflowY = 'hidden';
-setTimeout(()=> {
-    document.body.style.overflowY = 'auto';
-    console.log("salut");
-}, 2000);
