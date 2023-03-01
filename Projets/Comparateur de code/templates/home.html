@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <style>
+    *{
+            animation: fadeInAnimation ease 1s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+      
+  </style>
+  <body class="h-screen w-screen bg-[#0D0C11]">
+
+      <ul class="fixed flex justify-center top-0 p-2 z-10 mx-auto bg-[#0D0C11] h-max w-screen">
+        <li class="mr-5 font-mono"><a class="mt-2 border-hidden text-[#8F92A0] hover:border-b-2 hover:border-solid hover:border-[#200741] hover:text-white" href="/build">Dichotomie</a></li>
+        <li><a class="mt-2 border-hidden font-mono text-[#8F92A0] hover:border-b-2 hover:border-solid hover:border-[#200741] hover:text-white" href="/">Factoriel iteratif</a></li>
+      </ul>
+
+      <!-- en-tete -->
+      <div class="mt-10 grid h-max w-screen grid-cols-1 text-[#8F92A0] md:grid-cols-6">
+        <!-- image -->
+        <div class="col-span-1 m-6 md:col-span-3 h-max w-full flex justify-center" id="image">
+          <img src={{ url_for('static', filename='images/bg_image.png')}} />
+        </div>
+        <!-- texte generer par chat GTP-->
+        <div class="col-span-1 h-full w-full p-10 pt-20 text-3xl md:text-sm font-mono text-[#8F92A0] md:col-span-3">
+          <p>Pourquoi ?</p>
+          <br />
+          <p>Il y a plusieurs bonnes raisons de vérifier le temps d'exécution de votre code. Tout d'abord, cela vous permet de savoir combien de temps prend votre code pour s'exécuter et de déterminer si cela est acceptable ou non. Si le temps d'exécution est trop long, vous pouvez essayer de l'optimiser pour le rendre plus rapide.</p>
+          <br /><br />
+          <p>Ensuite, vérifier le temps d'exécution de votre code peut vous aider à détecter des problèmes de performance et à les résoudre avant qu'ils ne deviennent graves. Par exemple, si vous avez un boucle qui prend beaucoup de temps à s'exécuter, vous pourrez identifier le problème et le corriger avant que cela n'affecte l'ensemble de votre programme.</p>
+          <br /><br />
+          <p>Enfin, vérifier le temps d'exécution de votre code vous permet de comparer les différentes versions de votre programme et de déterminer laquelle est la plus efficace. Cela peut vous aider à choisir la version la plus adaptée à vos besoins et à améliorer continuellement la performance de votre code.</p>
+          <br /><br />
+          <p>En résumé, vérifier le temps d'exécution de votre code est important pour s'assurer de sa performance, de sa qualité et de son efficacité. Cela vous permet également de détecter et de résoudre rapidement tout problème de performance avant qu'il ne devienne trop grave.</p>
+        </div>
+      </div>
+      <!-- classement et enregistrement-->
+      <div class="col-span-1 grid md:grid-cols-4 w-screen h-screen bg-[#200741] ">
+        <div class="flex flex-col col-span-1 md:col-span-3 h-max overflow-y-auto">
+            <h1 class="m-5 mb-10 text-center text-white font-mono text-5xl ">Classement :</h1>
+            
+            {%for k, v in classement.items()%}
+            <div class="col-span-full flex justify-between rounded-lg bg-[#17141E] h-max 1/3-w-screen m-2 p-2 shadow-sm cursor-ns-resize">    
+                    <p class="text-white font-mono text-3xl">{{k}}</p>
+                    <p class="text-white font-mono text-3xl">{{v}} points</p>
+                    <p class="text-white font-mono text-3xl">Ranking {{loop.index}}</p>
+            </div>
+            {%endfor%}
+        </div>
+        <!-- Ajout code -->
+        <div class=" bg-[#200741] pt-20">
+            <div class="bg-local bg-cover bg-no-repeat p-30 w-full h-max rounded-lg right-0 flex justify-start " style="background-image:url({{url_for('static', filename='images/form_image.png')}})">
+                <form class="m-10" method=post enctype=multipart/form-data>
+                    <h1 class="text-white font-mono pb-10 pr-10">J'ajoute mon code</h1>
+                    <input type="text" name='nom' id="nom" class="w-full text-3xl text-white bg-transparent placeholder-white border-b-2 border-b-white p-1   focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Nom" required><br>
+                    <input type="text" name="prenom" id="prenom" class="w-full text-3xl text-white bg-transparent placeholder-white border-b-2 border-b-white p-1   focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Prénom" required><br>
+                    <br>
+                    <br>
+                    <input type="file" name = "file" id ="file" accept = ".c" enctype="multipart/form-data" class="w-full border-gray-300 rounded-r-sm flex items-center justify-between">" required/><br><br>
+                    <input type="submit" value="Rejoins l'aventure" class="place-content-center  h-max w-max focus:outline-none text-white bg-purple-700 hover:bg-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 mx-auto my-5 dark:bg-purple-600 dark:hover:bg-purple-700 cursor-pointer"><br>
+                </form> 
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
