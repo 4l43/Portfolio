@@ -40,6 +40,16 @@
 }
 
 
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
 /*cursor*/
 .cursor{
     display: block;
@@ -367,6 +377,10 @@ button.Contact {
     font-family: 'Abhaya Libre', serif;
     font-weight: 800;
     font-size: calc(8vw + 2.5vh);
+}
+
+.Contact a{
+    color: #F3F0E2;
 }
 
 

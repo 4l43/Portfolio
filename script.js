@@ -52,10 +52,14 @@ document.addEventListener('mousemove', e => {
     */
     document.addEventListener('mouseover', e => {
         const target = e.target;
+        if(target.matches('.Contact a')){
+            cursor.classList.add('active2');
+        }
         if (target.matches('a')||target.matches('.name h1')||target.matches('.langages h1')||target.matches('.langagesMax h1')) {
           cursor.classList.add('active');
         } else {
           cursor.classList.remove('active');
+          cursor.classList.remove('active2');
         }
       });
 });
