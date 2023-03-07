@@ -37,12 +37,25 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
 //cursor 
-const cursorRounded = document.querySelector('.cursor');
+const cursor = document.querySelector('.cursor');
 
 document.addEventListener('mousemove', e => {
-    const mouseX = e.pageX;
-    const mouseY = e.pageY;
+    cursor.setAttribute('style' , 'top:'+(e.clientY)+"px; left:"+(e.clientX)+"px;")
+    /*
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
 
-    cursorRounded.style.top = mouseY + "px";
-    cursorRounded.style.left = mouseX + "px";
-})
+    cursorRounded.style.top = (mouseY-20) + "px";
+    cursorRounded.style.left = (mouseX-20) + "px";
+    console.log(mouseX);
+    console.log(mouseY);
+    */
+    document.addEventListener('mouseover', e => {
+        const target = e.target;
+        if (target.matches('a')||target.matches('.name h1')||target.matches('.langages h1')||target.matches('.langagesMax h1')) {
+          cursor.classList.add('active');
+        } else {
+          cursor.classList.remove('active');
+        }
+      });
+});
