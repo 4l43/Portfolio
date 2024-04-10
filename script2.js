@@ -6,7 +6,7 @@ console.log("salut");
 document.body.style.overflowY = 'hidden';
 setTimeout(()=> {
     document.body.style.overflowY = 'auto';
-}, 2000);
+}, 500);
 
 
 /*apparition au deffilement */
@@ -41,15 +41,7 @@ const cursor = document.querySelector('.cursor');
 
 document.addEventListener('mousemove', e => {
     cursor.setAttribute('style' , 'top:'+(e.clientY)+"px; left:"+(e.clientX)+"px;")
-    /*
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
 
-    cursorRounded.style.top = (mouseY-20) + "px";
-    cursorRounded.style.left = (mouseX-20) + "px";
-    console.log(mouseX);
-    console.log(mouseY);
-    */
     document.addEventListener('mouseover', e => {
         const target = e.target;
         if(target.matches('.Contact a')){
