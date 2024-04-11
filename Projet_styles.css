@@ -102,11 +102,11 @@ p.Bienvenue {
 }
 
 .cursor.active::before{
-    content: "Voire";
+    content: "Voir";
     font-size: 10%;
     font-family: 'Abril Fatface', cursive;
     display: block;
-    transform: translate(10%,75%);
+    transform: translate(20%,75%);
     color: #F3F0E2;
 }
 
