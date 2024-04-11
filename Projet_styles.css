@@ -13,7 +13,7 @@ ul{
     padding: 0;
     width: 100vw;
     display:flex;
-    justify-content:center;
+    justify-content:right;
 }
 
 li{
@@ -21,7 +21,8 @@ li{
 }
 
 li a{
-    margin-left: 5vw;
+    /*margin-left: 5vw;*/
+    margin-right: 5vw;
     text-decoration: none;
     list-style-type: none;
     font-family: 'Abhaya Libre', serif;

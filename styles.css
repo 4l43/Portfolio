@@ -13,7 +13,7 @@ ul{
     padding: 0;
     width: 100vw;
     display:flex;
-    justify-content:center;
+    justify-content:right
 }
 
 li{
@@ -21,7 +21,8 @@ li{
 }
 
 li a{
-    margin-left: 5vw;
+    /*margin-left: 5vw;*/
+    margin-right: 5vw;
     text-decoration: none;
     list-style-type: none;
     font-family: 'Abhaya Libre', serif;
@@ -154,7 +155,7 @@ html {
     z-index: 10;
     width: 100vw;
     height: 100vh;
-    background-color: #F3F0E2;
+    /*background-color: #F3F0E2;*/background-color:bisque; 
     display: flex;
     position: fixed;
     justify-content: center;
@@ -181,7 +182,7 @@ p.Bienvenue {
 /*About*/
 .about {
     z-index: 8;
-    background-color: #F3F0E2;
+    /*background-color: #F3F0E2;*/background-color:bisque; 
     width: 100%;
     height: 100vh;
     display: flex;
@@ -288,7 +289,7 @@ p.Bienvenue {
     left: -5%;
     height: 100%;
     width: 105vw;
-    background-color: #F3F0E2;
+    /*background-color: #F3F0E2;*/background-color:bisque; 
     z-index: 1;
 }
 
@@ -428,7 +429,7 @@ button.Contact {
 /*thx*/
 
 div.thx {
-    background-color: #F3F0E2;
+    /*background-color: #F3F0E2;*/background-color:bisque; 
     display: flex;
     justify-content: center;
     align-items: center;
